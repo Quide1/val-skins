@@ -6,8 +6,9 @@ function TestPageWithParam() {
   return (
     <div>
       <h1>
-        hola{weapon}
+        hola {weapon}
       </h1>
+      <p>Este parrafo tendria que hablar sobre la weapon</p>
     </div>
   )
 }
