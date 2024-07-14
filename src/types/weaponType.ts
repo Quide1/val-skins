@@ -67,9 +67,9 @@ export interface Weapon {
     categoryText: string
     gridPosition?: GridPosition
     canBeTrashed: boolean
-    image: any
+    image: string
     newImage: string
-    newImage2: any
+    newImage2: string
     assetPath: string
   }
   
