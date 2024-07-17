@@ -22,7 +22,7 @@ function NavBarAccordion({ accordionTitle, weapons }: NavBarAccordionProps) {
           <AccordionContent className=' mb-2 flex flex-col gap-4 ' >
             {weapons.map(({ displayName, uuid }) => {
               return (
-                <Link className='flex flex-row gap-2 hover:translate-x-2 transition-all' key={uuid} to={`/weapons/${displayName}`}>
+                <Link className='flex flex-row gap-2 hover:translate-x-2 transition-all' key={uuid} to={`/weapons/${displayName}?idWeapon=${uuid}`}>
                   <CaretRight /><p>{displayName}</p>
                 </Link>
               )
