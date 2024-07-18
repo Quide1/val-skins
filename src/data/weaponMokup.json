@@ -1,0 +1,51 @@
+{
+    "status": 200,
+    "data": {
+        "uuid": "bd647d56-4542-19cd-e1ed-4fb429c78cf9",
+        "displayName": "Neo Frontier Odin",
+        "themeUuid": "3e8c23b5-47f3-fc77-788a-94852f7a111e",
+        "contentTierUuid": "e046854e-406c-37f4-6607-19a9ba8426fc",
+        "displayIcon": "https://media.valorant-api.com/weaponskins/bd647d56-4542-19cd-e1ed-4fb429c78cf9/displayicon.png",
+        "wallpaper": null,
+        "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/HMG_Gunslinger_PrimaryAsset",
+        "chromas": [
+            {
+                "uuid": "e20c028f-4e3e-0df7-551d-8c9eb51d08e7",
+                "displayName": "Neo Frontier Odin",
+                "displayIcon": "https://media.valorant-api.com/weaponskinchromas/e20c028f-4e3e-0df7-551d-8c9eb51d08e7/displayicon.png",
+                "fullRender": "https://media.valorant-api.com/weaponskinchromas/e20c028f-4e3e-0df7-551d-8c9eb51d08e7/fullrender.png",
+                "swatch": "https://media.valorant-api.com/weaponskinchromas/e20c028f-4e3e-0df7-551d-8c9eb51d08e7/swatch.png",
+                "streamedVideo": null,
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Chromas/Standard/HMG_Gunslinger_Standard_PrimaryAsset"
+            },
+            {
+                "uuid": "10be56f0-48eb-9293-3888-84ba8249cf46",
+                "displayName": "Neo Frontier Odin Level 4\n(Variant 1 Gold)",
+                "displayIcon": "https://media.valorant-api.com/weaponskinchromas/10be56f0-48eb-9293-3888-84ba8249cf46/displayicon.png",
+                "fullRender": "https://media.valorant-api.com/weaponskinchromas/10be56f0-48eb-9293-3888-84ba8249cf46/fullrender.png",
+                "swatch": "https://media.valorant-api.com/weaponskinchromas/10be56f0-48eb-9293-3888-84ba8249cf46/swatch.png",
+                "streamedVideo": "https://valorant.dyn.riotcdn.net/x/videos/release-09.01/9cc445f4-4446-1e1b-1a15-a3acdf74d52e_default_universal.mp4",
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Chromas/v1/HMG_Gunslinger_v1_PrimaryAsset"
+            },
+            {
+                "uuid": "ce250c6a-4873-b305-4872-7392d0d84c1b",
+                "displayName": "Neo Frontier Odin Level 4\n(Variant 2 Silver)",
+                "displayIcon": "https://media.valorant-api.com/weaponskinchromas/ce250c6a-4873-b305-4872-7392d0d84c1b/displayicon.png",
+                "fullRender": "https://media.valorant-api.com/weaponskinchromas/ce250c6a-4873-b305-4872-7392d0d84c1b/fullrender.png",
+                "swatch": "https://media.valorant-api.com/weaponskinchromas/ce250c6a-4873-b305-4872-7392d0d84c1b/swatch.png",
+                "streamedVideo": "https://valorant.dyn.riotcdn.net/x/videos/release-09.01/9520c794-4614-636d-8b87-0d94cd5af43a_default_universal.mp4",
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Chromas/v2/HMG_Gunslinger_v2_PrimaryAsset"
+            },
+            {
+                "uuid": "6de72b14-4680-8a4e-92bc-dd85a0aa67d7",
+                "displayName": "Neo Frontier Odin Level 4\n(Variant 3 Copper)",
+                "displayIcon": "https://media.valorant-api.com/weaponskinchromas/6de72b14-4680-8a4e-92bc-dd85a0aa67d7/displayicon.png",
+                "fullRender": "https://media.valorant-api.com/weaponskinchromas/6de72b14-4680-8a4e-92bc-dd85a0aa67d7/fullrender.png",
+                "swatch": "https://media.valorant-api.com/weaponskinchromas/6de72b14-4680-8a4e-92bc-dd85a0aa67d7/swatch.png",
+                "streamedVideo": "https://valorant.dyn.riotcdn.net/x/videos/release-09.01/5d99e67a-46b1-d041-e119-dfbf4b4ad1ac_default_universal.mp4",
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Chromas/v3/HMG_Gunslinger_v3_PrimaryAsset"
+            }
+        ],
+        "levels": []
+    }
+}
