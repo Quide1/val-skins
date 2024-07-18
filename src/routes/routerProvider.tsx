@@ -1,6 +1,6 @@
 import App from '@/App'
 import NotFound from '@/pages/NotFoundPage'
-import TestPageWithParam from '@/pages/TestPageWithParam'
+import WeaponPage from '@/pages/WeaponPage'
 import {
   createBrowserRouter,
   RouterProvider as Provider
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path:'weapons/:weapon',
-        element:<TestPageWithParam/>
+        element:<WeaponPage/>
       }
     ]
   }
