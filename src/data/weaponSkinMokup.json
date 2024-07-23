@@ -46,6 +46,39 @@
                 "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Chromas/v3/HMG_Gunslinger_v3_PrimaryAsset"
             }
         ],
-        "levels": []
+        "levels": [
+            {
+                "uuid": "6f60b3ce-4cbf-91ea-2ca7-59bbf1923751",
+                "displayName": "Neo Frontier Odin",
+                "levelItem": null,
+                "displayIcon": "https://media.valorant-api.com/weaponskinlevels/6f60b3ce-4cbf-91ea-2ca7-59bbf1923751/displayicon.png",
+                "streamedVideo": "https://valorant.dyn.riotcdn.net/x/videos/release-09.01/729c9e7f-43be-dce4-b532-b99995902188_default_universal.mp4",
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Levels/HMG_Gunslinger_Lv1_PrimaryAsset"
+            },
+            {
+                "uuid": "8c531daf-4b31-06f7-0cbe-f989029245d1",
+                "displayName": "Neo Frontier Odin Level 2",
+                "levelItem": "EEquippableSkinLevelItem::Animation",
+                "displayIcon": null,
+                "streamedVideo": "https://valorant.dyn.riotcdn.net/x/videos/release-09.01/8a2d9288-4dd7-c902-d482-6c9684ceffc7_default_universal.mp4",
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Levels/HMG_Gunslinger_Lv2_PrimaryAsset"
+            },
+            {
+                "uuid": "c5175815-41da-879b-c547-429ce4d7a191",
+                "displayName": "Neo Frontier Odin Level 3",
+                "levelItem": "EEquippableSkinLevelItem::Transformation",
+                "displayIcon": null,
+                "streamedVideo": "https://valorant.dyn.riotcdn.net/x/videos/release-09.01/fe5acf44-4820-c780-b635-8587a6282432_default_universal.mp4",
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Levels/HMG_Gunslinger_Lv3_PrimaryAsset"
+            },
+            {
+                "uuid": "220bfeea-44f4-51ee-c903-1dbfb1021ec4",
+                "displayName": "Neo Frontier Odin Level 4",
+                "levelItem": "EEquippableSkinLevelItem::Finisher",
+                "displayIcon": null,
+                "streamedVideo": "https://valorant.dyn.riotcdn.net/x/videos/release-09.01/bfe74105-40b6-b9e9-d614-00adfa9f53ce_default_universal.mp4",
+                "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Gunslinger/Levels/HMG_Gunslinger_Lv4_PrimaryAsset"
+            }
+        ]
     }
 }
