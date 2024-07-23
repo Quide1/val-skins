@@ -1,8 +1,9 @@
-import WeaponCard from "@/components/WeaponCard";
-import { getWeaponById } from "@/services/weapons";
-import { useEffect } from "react";
+// import WeaponCard from "@/components/WeaponCard";
+// import { getWeaponById } from "@/services/weapons";
+// import { useEffect } from "react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import weaponOdin from '@/data/weaponMokup.json'
+import weaponSkinOdin from '@/data/weaponSkinMokup.json'
+import WeaponSkinCard from "@/components/WeaponSkinCard";
 function WeaponPage() {
   const { weapon } = useParams();
   const [searchParams] = useSearchParams();
@@ -28,9 +29,9 @@ function WeaponPage() {
 
   return (
     <div>
-      <h1>hola {weapon}</h1>
-      <p>Este párrafo debería hablar sobre la weapon {weapon}</p>
-      <WeaponCard weaponProps={weaponOdin.data}/>
+      <h1>Pagina del arma : {weapon}</h1>
+      <p>tiene el uuid : {searchParams.get('idWeapon')}</p>
+      <WeaponSkinCard skinCardProps={weaponSkinOdin.data}/>
     </div>
   );
 }
