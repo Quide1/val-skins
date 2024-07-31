@@ -1,6 +1,6 @@
 export interface Weapon {
   status: number;
-  data: Daum[];
+  data: Daum;
 }
 
 export interface Daum {
