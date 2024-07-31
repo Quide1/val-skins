@@ -38,13 +38,17 @@ function WeaponPage() {
     <div className="flex flex-col">
       <h1>Página del arma: {weapon}</h1>
       <p>UUID: {searchParams.get("idWeapon")}</p>
+      <div className="flex flex-wrap items-center justify-center gap-4">
       {weaponSkins && weaponSkins.length > 0 ? (
-        weaponSkins.map((skin, key) => (
-          <WeaponSkinCard skinCardProps={skin} key={key} />
+        weaponSkins.map((skin) => (
+          <WeaponSkinCard skinCardProps={skin} key={skin.uuid} />
         ))
       ) : (
         <p>No skins available.</p>
       )}
+
+      </div>
+    
     </div>
   );
 }

@@ -1,7 +1,8 @@
 import { useSkinCardInfo } from "@/hooks/useSkinCardInfo";
-import { Chroma, type Skin } from "@/types/weaponType";
-import { normalizedChromaName } from "@/utils/normalizedChromaName";
+import {  type Skin } from "@/types/weaponType";
+// import { normalizedChromaName } from "@/utils/normalizedChromaName";
 import { normalizedLevelName } from "@/utils/normalizedLevelName";
+
 type PropsWeaponSkinCard = {
   skinCardProps: Skin;
 };
@@ -9,21 +10,11 @@ type PropsWeaponSkinCard = {
 function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
   const { chromas, displayName, levels } = skinCardProps;
   const {
-    currentChromaImg,
-    currentChromaName,
-    changeCurrentChroma,
-    currentChromaUuid,
+chroma,
+changeChroma
   } = useSkinCardInfo(chromas);
-
-  const clickHandler = (chroma: Chroma) => {
-    const { displayName, fullRender, uuid } = chroma;
-    const variant = normalizedChromaName(displayName);
-    changeCurrentChroma({
-      chromaImg: fullRender,
-      chromaName: variant,
-      chromaUuid: uuid,
-    });
-  };
+  
+  
 
   return (
     <article className="border-2 border-gray-500 bg-slate-900 min-w-[270px] p-2 flex justify-center flex-col gap-4 max-w-[550px] text-center rounded-sm">
@@ -31,29 +22,30 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
         <h2 className="font-bold">{displayName}</h2>
       </div>
       <div className="border-2 h-7">
-        {<p className="text-red-700 font-bold">{currentChromaName}</p>}
+        <p className="text-red-700 font-bold">{chroma.displayName}</p>
       </div>
-      <div>
+      <div className="min-h-80 flex justify-center items-center">
         <img
-          src={`${currentChromaImg}`}
+          src={`${chroma.fullRender}`}
           alt={`skin ${skinCardProps.displayName}`}
         />
       </div>
       <div className="flex flex-row justify-around min-h-8 border items-center">
-        {chromas.map((chroma) =>
-          chroma?.swatch ? (
+        {chromas.map((_chroma,index) =>
+          _chroma?.swatch ? (
             <div
-              className={`border border-red-white hover:scale-125 animate-in transition-all ${currentChromaUuid === chroma.uuid
+              className={`border border-red-white hover:scale-125 animate-in transition-all ${
+                chroma.uuid === _chroma.uuid
                   ? "border-2 border-red-600"
-                  : null
-                }`}
-              key={chroma.uuid}
+                  : ""
+              }`}
+              key={_chroma.uuid}
             >
               <img
                 className="w-6"
-                alt={`chroma ${chroma.displayName}`}
-                src={chroma.swatch}
-                onClick={() => clickHandler(chroma)}
+                alt={`chroma ${_chroma.displayName}`}
+                src={_chroma.swatch}
+                onClick={() => changeChroma(index)}
               ></img>
             </div>
           ) : null
@@ -64,13 +56,28 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
           <p className="text-bold">Levels</p>
         </div>
         <div className="flex justify-around text-sm min-h-8">
-          {levels.length > 1 ? levels.map((level,index) => {
-            return level.levelItem !== null && level.levelItem !== undefined ? (
-              <a  target="_blank" key={index} href={level.streamedVideo ?? '#'}> <p className="text-red-700 font-semibold hover:text-white" key={level.uuid}>{normalizedLevelName(level.levelItem)}</p></a>
-            ) : (
-              null
-            );
-          }) : <p className="text-gray-700"> Empty</p>}
+          {levels.length > 1 ? (
+            levels.map((level, index) => {
+              return level.levelItem !== null &&
+                level.levelItem !== undefined ? (
+                <a
+                  target="_blank"
+                  key={index}
+                  href={level.streamedVideo ?? "#"}
+                >
+                  {" "}
+                  <p
+                    className="text-red-700 font-semibold hover:text-white"
+                    key={level.uuid}
+                  >
+                    {normalizedLevelName(level.levelItem)}
+                  </p>
+                </a>
+              ) : null;
+            })
+          ) : (
+            <p className="text-gray-700"> Empty</p>
+          )}
         </div>
       </div>
     </article>
