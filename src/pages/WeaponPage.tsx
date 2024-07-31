@@ -13,8 +13,9 @@ function WeaponPage() {
   useEffect(() => {
     const fetchData = async () => {
       const weaponUuid = searchParams.get("idWeapon");
-      if (!weaponUuid) {
-        navigate("/");
+      console.log(weaponUuid)
+      if (weaponUuid == null) {
+        // navigate("/");
         return;
       }
       try {
@@ -23,11 +24,11 @@ function WeaponPage() {
           setWeaponSkins(response.data.skins);
         } else {
           console.error("No skins found for weapon.");
-          navigate("/");
+          // navigate("/");
         }
       } catch (error) {
         console.error("Error fetching weapon:", error);
-        navigate("/");
+        // navigate("/");
       }
     };
 

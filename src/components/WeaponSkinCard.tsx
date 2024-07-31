@@ -1,6 +1,6 @@
 import { useSkinCardInfo } from "@/hooks/useSkinCardInfo";
-import {  type Skin } from "@/types/weaponType";
-// import { normalizedChromaName } from "@/utils/normalizedChromaName";
+import { type Skin } from "@/types/weaponType";
+import { normalizedChromaName } from "@/utils/normalizedChromaName";
 import { normalizedLevelName } from "@/utils/normalizedLevelName";
 
 type PropsWeaponSkinCard = {
@@ -9,12 +9,7 @@ type PropsWeaponSkinCard = {
 
 function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
   const { chromas, displayName, levels } = skinCardProps;
-  const {
-chroma,
-changeChroma
-  } = useSkinCardInfo(chromas);
-  
-  
+  const { chroma, changeChroma } = useSkinCardInfo(chromas)
 
   return (
     <article className="border-2 border-gray-500 bg-slate-900 min-w-[270px] p-2 flex justify-center flex-col gap-4 max-w-[550px] text-center rounded-sm">
@@ -22,7 +17,7 @@ changeChroma
         <h2 className="font-bold">{displayName}</h2>
       </div>
       <div className="border-2 h-7">
-        <p className="text-red-700 font-bold">{chroma.displayName}</p>
+        <p className="text-red-700 font-bold">{normalizedChromaName(chroma.displayName )}</p>
       </div>
       <div className="max-h-[340px] flex justify-center items-center border-2">
         <img
@@ -32,13 +27,11 @@ changeChroma
         />
       </div>
       <div className="flex flex-row justify-around min-h-8 border items-center">
-        {chromas.map((_chroma,index) =>
+        {chromas.map((_chroma, index) =>
           _chroma?.swatch ? (
             <div
               className={`border border-red-white hover:scale-125 animate-in transition-all ${
-                chroma.uuid === _chroma.uuid
-                  ? "border-2 border-red-600"
-                  : ""
+                chroma.uuid === _chroma.uuid ? "border-2 border-red-600" : ""
               }`}
               key={_chroma.uuid}
             >
