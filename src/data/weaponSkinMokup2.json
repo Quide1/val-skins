@@ -1,0 +1,33 @@
+{
+    "status": 200,
+    "data": {
+    "uuid": "e9fce399-4abc-bb3c-8992-f887918ce327",
+    "displayName": "VALORANT GO! Vol. 2 Ares",
+    "themeUuid": "82738de9-4992-ebfd-8c47-7384a6b9eb7b",
+    "contentTierUuid": "60bca009-4182-7998-dee7-b8a2558dc369",
+    "displayIcon": "https://media.valorant-api.com/weaponskins/e9fce399-4abc-bb3c-8992-f887918ce327/displayicon.png",
+    "wallpaper": "https://media.valorant-api.com/weaponskins/e9fce399-4abc-bb3c-8992-f887918ce327/wallpaper.png",
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/LMG/Anime2/LMG_Anime2_PrimaryAsset",
+    "chromas": [
+    {
+    "uuid": "825648b2-4c6f-4bb7-6d47-43a9734a18ab",
+    "displayName": "VALORANT GO! Vol. 2 Ares",
+    "displayIcon": "https://media.valorant-api.com/weaponskinchromas/825648b2-4c6f-4bb7-6d47-43a9734a18ab/displayicon.png",
+    "fullRender": "https://media.valorant-api.com/weaponskinchromas/825648b2-4c6f-4bb7-6d47-43a9734a18ab/fullrender.png",
+    "swatch": null,
+    "streamedVideo": null,
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/LMG/Anime2/Chromas/Standard/LMG_Anime2_Standard_PrimaryAsset"
+    }
+    ],
+    "levels": [
+    {
+    "uuid": "1203a0b8-4044-a7de-1751-87b30b9574e8",
+    "displayName": "VALORANT GO! Vol. 2 Ares",
+    "levelItem": null,
+    "displayIcon": "https://media.valorant-api.com/weaponskinlevels/1203a0b8-4044-a7de-1751-87b30b9574e8/displayicon.png",
+    "streamedVideo": null,
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/LMG/Anime2/Levels/LMG_Anime2_Lv1_PrimaryAsset"
+    }
+    ]
+    }
+    }
