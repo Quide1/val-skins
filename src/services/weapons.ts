@@ -19,7 +19,7 @@ export async function getAllWeapons() {
 
 export async function getWeaponById(weaponUuid:string){
     try {
-        const response = await fetch(`https://valorant-api.com/v1/weapons/${weaponUuid}`, {
+        const response = await fetch(`${import.meta.env.VITE_PUBLIC_URL_API}/weapons/${weaponUuid}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
