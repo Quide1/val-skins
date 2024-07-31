@@ -1,15 +1,20 @@
 import { useSkinCardInfo } from "@/hooks/useSkinCardInfo";
 import { Chroma, type Skin } from "@/types/weaponType";
 import { normalizedChromaName } from "@/utils/normalizedChromaName";
-
+import { normalizedLevelName } from "@/utils/normalizedLevelName";
 type PropsWeaponSkinCard = {
   skinCardProps: Skin;
 };
 
 function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
-  const { chromas, displayName } = skinCardProps;
-  const { currentChromaImg, currentChromaName, changeCurrentChroma,currentChromaUuid } =
-    useSkinCardInfo(chromas);
+  const { chromas, displayName, levels } = skinCardProps;
+  const {
+    currentChromaImg,
+    currentChromaName,
+    changeCurrentChroma,
+    currentChromaUuid,
+  } = useSkinCardInfo(chromas);
+
   const clickHandler = (chroma: Chroma) => {
     const { displayName, fullRender, uuid } = chroma;
     const variant = normalizedChromaName(displayName);
@@ -26,9 +31,7 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
         <h2 className="font-bold">{displayName}</h2>
       </div>
       <div className="border-2 h-7">
-        { (
-          <p className="text-red-700 font-bold">{currentChromaName}</p>
-        ) }
+        {<p className="text-red-700 font-bold">{currentChromaName}</p>}
       </div>
       <div>
         <img
@@ -37,31 +40,37 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
         />
       </div>
       <div className="flex flex-row justify-around min-h-8 border items-center">
-        { skinCardProps.chromas.map((chroma) =>
-              chroma?.swatch ? (
-                <div
-                  className={`border border-red-white hover:scale-125 animate-in transition-all ${currentChromaUuid === chroma.uuid ? 'border-2 border-red-600' : null}` }
-                  key={chroma.uuid}
-                >
-                  <img
-                    className="w-6"
-                    alt={`chroma ${chroma.displayName}`}
-                    src={chroma.swatch}
-                    onClick={() => clickHandler(chroma)}
-                  ></img>
-                </div>
-              ) : null
-            )
-          }
+        {chromas.map((chroma) =>
+          chroma?.swatch ? (
+            <div
+              className={`border border-red-white hover:scale-125 animate-in transition-all ${currentChromaUuid === chroma.uuid
+                  ? "border-2 border-red-600"
+                  : null
+                }`}
+              key={chroma.uuid}
+            >
+              <img
+                className="w-6"
+                alt={`chroma ${chroma.displayName}`}
+                src={chroma.swatch}
+                onClick={() => clickHandler(chroma)}
+              ></img>
+            </div>
+          ) : null
+        )}
       </div>
       <div className="border flex flex-col border-red-500 gap-2">
         <div className="flex justify-start">
-          <p>Levels</p>
+          <p className="text-bold">Levels</p>
         </div>
-        <div className="flex justify-around text-sm">
-          <p>Vfx</p>
-          <p>Finisher</p>
-          <p>Nose</p>
+        <div className="flex justify-around text-sm min-h-8">
+          {levels.length > 1 ? levels.map((level,index) => {
+            return level.levelItem !== null && level.levelItem !== undefined ? (
+              <a  target="_blank" key={index} href={level.streamedVideo ?? '#'}> <p className="text-red-700 font-semibold hover:text-white" key={level.uuid}>{normalizedLevelName(level.levelItem)}</p></a>
+            ) : (
+              null
+            );
+          }) : <p className="text-gray-700"> Empty</p>}
         </div>
       </div>
     </article>
