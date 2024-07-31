@@ -14,11 +14,10 @@ function WeaponPage() {
     const fetchData = async () => {
       const weaponUuid = searchParams.get("idWeapon");
       console.log(weaponUuid)
-      if (weaponUuid == null) {
-        // navigate("/");
-        return;
-      }
       try {
+        if (weaponUuid == null) {
+          return;
+        }
         const response = await getWeaponById(weaponUuid);
         console.log(response)
         if (response && response.data && response.data.skins) {
