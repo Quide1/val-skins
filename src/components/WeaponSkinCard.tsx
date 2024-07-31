@@ -24,10 +24,11 @@ changeChroma
       <div className="border-2 h-7">
         <p className="text-red-700 font-bold">{chroma.displayName}</p>
       </div>
-      <div className="min-h-80 flex justify-center items-center">
+      <div className="max-h-[340px] flex justify-center items-center border-2">
         <img
           src={`${chroma.fullRender}`}
           alt={`skin ${skinCardProps.displayName}`}
+          className="w-full"
         />
       </div>
       <div className="flex flex-row justify-around min-h-8 border items-center">
