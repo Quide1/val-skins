@@ -13,13 +13,13 @@ function WeaponPage() {
   useEffect(() => {
     const fetchData = async () => {
       const weaponUuid = searchParams.get("idWeapon");
-      console.log(weaponUuid)
+      console.log(weaponUuid);
       try {
         if (weaponUuid == null) {
           return;
         }
         const response = await getWeaponById(weaponUuid);
-        console.log(response)
+        console.log('Respuesta de la fetch',response);
         if (response && response.data && response.data.skins) {
           setWeaponSkins(response.data.skins);
         } else {
@@ -40,16 +40,14 @@ function WeaponPage() {
       <h1>Página del arma: {weapon}</h1>
       <p>UUID: {searchParams.get("idWeapon")}</p>
       <div className="flex flex-wrap items-center justify-center gap-4">
-      {weaponSkins && weaponSkins.length > 0 ? (
-        weaponSkins.map((skin) => (
-          <WeaponSkinCard skinCardProps={skin} key={skin.uuid} />
-        ))
-      ) : (
-        <p>No skins available.</p>
-      )}
-
+        {weaponSkins && weaponSkins.length > 0 ? (
+          weaponSkins.map((skin) => (
+            <WeaponSkinCard skinCardProps={skin} key={skin.uuid} />
+          ))
+        ) : (
+          <p>No skins available.</p>
+        )}
       </div>
-    
     </div>
   );
 }
