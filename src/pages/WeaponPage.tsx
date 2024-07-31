@@ -20,6 +20,7 @@ function WeaponPage() {
       }
       try {
         const response = await getWeaponById(weaponUuid);
+        console.log(response)
         if (response && response.data && response.data.skins) {
           setWeaponSkins(response.data.skins);
         } else {
