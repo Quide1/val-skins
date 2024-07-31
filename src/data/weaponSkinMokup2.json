@@ -1,33 +1,57 @@
 {
-    "status": 200,
-    "data": {
-    "uuid": "e9fce399-4abc-bb3c-8992-f887918ce327",
-    "displayName": "VALORANT GO! Vol. 2 Ares",
-    "themeUuid": "82738de9-4992-ebfd-8c47-7384a6b9eb7b",
-    "contentTierUuid": "60bca009-4182-7998-dee7-b8a2558dc369",
-    "displayIcon": "https://media.valorant-api.com/weaponskins/e9fce399-4abc-bb3c-8992-f887918ce327/displayicon.png",
-    "wallpaper": "https://media.valorant-api.com/weaponskins/e9fce399-4abc-bb3c-8992-f887918ce327/wallpaper.png",
-    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/LMG/Anime2/LMG_Anime2_PrimaryAsset",
+    "uuid": "72e724e9-4ba4-2d12-ce1a-8db1a528b9d3",
+    "displayName": "Prism III Odin",
+    "themeUuid": "0c2487bb-4cf9-78be-1bf1-c696f86b4aab",
+    "contentTierUuid": "12683d76-48d7-84a3-4e09-6985794f0445",
+    "displayIcon": "https://media.valorant-api.com/weaponskins/72e724e9-4ba4-2d12-ce1a-8db1a528b9d3/displayicon.png",
+    "wallpaper": null,
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Iridescence2/HMG_Iridescence2_PrimaryAsset",
     "chromas": [
     {
-    "uuid": "825648b2-4c6f-4bb7-6d47-43a9734a18ab",
-    "displayName": "VALORANT GO! Vol. 2 Ares",
-    "displayIcon": "https://media.valorant-api.com/weaponskinchromas/825648b2-4c6f-4bb7-6d47-43a9734a18ab/displayicon.png",
-    "fullRender": "https://media.valorant-api.com/weaponskinchromas/825648b2-4c6f-4bb7-6d47-43a9734a18ab/fullrender.png",
-    "swatch": null,
+    "uuid": "b8bf7a9c-4724-a090-31b2-79b2211a6079",
+    "displayName": "Prism III Odin",
+    "displayIcon": "https://media.valorant-api.com/weaponskinchromas/b8bf7a9c-4724-a090-31b2-79b2211a6079/displayicon.png",
+    "fullRender": "https://media.valorant-api.com/weaponskinchromas/b8bf7a9c-4724-a090-31b2-79b2211a6079/fullrender.png",
+    "swatch": "https://media.valorant-api.com/weaponskinchromas/b8bf7a9c-4724-a090-31b2-79b2211a6079/swatch.png",
     "streamedVideo": null,
-    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/LMG/Anime2/Chromas/Standard/LMG_Anime2_Standard_PrimaryAsset"
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Iridescence2/Chromas/Standard/HMG_Iridescence2_Standard_PrimaryAsset"
+    },
+    {
+    "uuid": "0cdd55d5-44ba-d1fe-58ba-a881b50fdc0b",
+    "displayName": "Prism III Odin\n(Variant 1 Pink)",
+    "displayIcon": "https://media.valorant-api.com/weaponskinchromas/0cdd55d5-44ba-d1fe-58ba-a881b50fdc0b/displayicon.png",
+    "fullRender": "https://media.valorant-api.com/weaponskinchromas/0cdd55d5-44ba-d1fe-58ba-a881b50fdc0b/fullrender.png",
+    "swatch": "https://media.valorant-api.com/weaponskinchromas/0cdd55d5-44ba-d1fe-58ba-a881b50fdc0b/swatch.png",
+    "streamedVideo": null,
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Iridescence2/Chromas/v1/HMG_Iridescence2_v1_PrimaryAsset"
+    },
+    {
+    "uuid": "11c0fc56-4b49-84f4-8e86-9ca17b4d75b4",
+    "displayName": "Prism III Odin\n(Variant 2 Green)",
+    "displayIcon": "https://media.valorant-api.com/weaponskinchromas/11c0fc56-4b49-84f4-8e86-9ca17b4d75b4/displayicon.png",
+    "fullRender": "https://media.valorant-api.com/weaponskinchromas/11c0fc56-4b49-84f4-8e86-9ca17b4d75b4/fullrender.png",
+    "swatch": "https://media.valorant-api.com/weaponskinchromas/11c0fc56-4b49-84f4-8e86-9ca17b4d75b4/swatch.png",
+    "streamedVideo": null,
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Iridescence2/Chromas/v2/HMG_Iridescence2_v2_PrimaryAsset"
+    },
+    {
+    "uuid": "1aa0f35d-4a18-2054-d408-a18b2671507f",
+    "displayName": "Prism III Odin\n(Variant 3 Purple)",
+    "displayIcon": "https://media.valorant-api.com/weaponskinchromas/1aa0f35d-4a18-2054-d408-a18b2671507f/displayicon.png",
+    "fullRender": "https://media.valorant-api.com/weaponskinchromas/1aa0f35d-4a18-2054-d408-a18b2671507f/fullrender.png",
+    "swatch": "https://media.valorant-api.com/weaponskinchromas/1aa0f35d-4a18-2054-d408-a18b2671507f/swatch.png",
+    "streamedVideo": null,
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Iridescence2/Chromas/v3/HMG_Iridescence2_v3_PrimaryAsset"
     }
     ],
     "levels": [
     {
-    "uuid": "1203a0b8-4044-a7de-1751-87b30b9574e8",
-    "displayName": "VALORANT GO! Vol. 2 Ares",
+    "uuid": "7e323e82-44b6-1711-2028-10af32c632d5",
+    "displayName": "Prism III Odin",
     "levelItem": null,
-    "displayIcon": "https://media.valorant-api.com/weaponskinlevels/1203a0b8-4044-a7de-1751-87b30b9574e8/displayicon.png",
+    "displayIcon": "https://media.valorant-api.com/weaponskinlevels/7e323e82-44b6-1711-2028-10af32c632d5/displayicon.png",
     "streamedVideo": null,
-    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/LMG/Anime2/Levels/LMG_Anime2_Lv1_PrimaryAsset"
+    "assetPath": "ShooterGame/Content/Equippables/Guns/HvyMachineGuns/HMG/Iridescence2/Levels/HMG_Iridescence2_Lv1_PrimaryAsset"
     }
     ]
-    }
     }
