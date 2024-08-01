@@ -3,7 +3,7 @@ import { errorHandler } from "./errorHandler";
 
 export async function getAllWeapons() {
     try {
-        const response = await fetch(`${process.env.VITE_PUBLIC_URL_API}/weapons`, {
+        const response = await fetch(`${import.meta.env.VITE_PUBLIC_URL_API}/weapons`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export async function getAllWeapons() {
 
 export async function getWeaponById(weaponUuid:string){
     try {
-        const response = await fetch(`${process.env.VITE_PUBLIC_URL_API}/weapons/${weaponUuid}`, {
+        const response = await fetch(`${import.meta.env.VITE_PUBLIC_URL_API}/weapons/${weaponUuid}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
