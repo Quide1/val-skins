@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useSkinCardInfo } from "@/hooks/useSkinCardInfo";
 import { type Skin } from "@/types/weaponType";
 import { normalizedChromaName } from "@/utils/normalizedChromaName";
 import { normalizedLevelName } from "@/utils/normalizedLevelName";
+import Loader from "./Loader";
 
 type PropsWeaponSkinCard = {
   skinCardProps: Skin;
@@ -9,34 +11,44 @@ type PropsWeaponSkinCard = {
 
 function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
   const { chromas, displayName, levels } = skinCardProps;
-  const { chroma, changeChroma } = useSkinCardInfo(chromas)
+  const { chroma, changeChroma } = useSkinCardInfo(chromas);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
 
   return (
-    <article className="border-2 border-gray-500 bg-slate-900 min-w-[270px] p-2 flex justify-center flex-col gap-4 max-w-[550px] text-center rounded-sm">
-      <div className="border-2 text-xl">
+    <article className=" border-gray-500 bg-slate-900 min-w-[270px] p-2 flex justify-center flex-col gap-4 max-w-[350px] text-center rounded-sm items-center">
+      <div className="text-xl">
         <h2 className="font-bold">{displayName}</h2>
       </div>
-      <div className="border-2 h-7">
-        <p className="text-red-700 font-bold">{normalizedChromaName(chroma.displayName )}</p>
+      <div className=" h-7">
+        <p className="text-red-700 font-bold">
+          {normalizedChromaName(chroma.displayName)}
+        </p>
       </div>
-      <div className="max-h-[340px] flex justify-center items-center border-2">
+      <div className="flex items-center justify-center border-2 border-red-700 h-[250px] max-w-[350px] p-2">
+        {isLoading && <Loader />}
         <img
           src={`${chroma.fullRender}`}
           alt={`skin ${skinCardProps.displayName}`}
-          className="w-full"
+          onLoad={handleImageLoad}
+          loading="lazy"
+          className="max-h-full border-white-600"
         />
       </div>
-      <div className="flex flex-row justify-around min-h-8 border items-center">
+      <div className="flex flex-row justify-around min-h-8  items-center gap-4">
         {chromas.map((_chroma, index) =>
           _chroma?.swatch ? (
             <div
-              className={`border border-red-white hover:scale-125 animate-in transition-all ${
+              className={` bg-gray-600 hover:scale-125 animate-in transition-all ${
                 chroma.uuid === _chroma.uuid ? "border-2 border-red-600" : ""
               }`}
               key={_chroma.uuid}
             >
               <img
-                className="w-6"
+                className="w-6 shadow-md shadow-red-400"
                 alt={`chroma ${_chroma.displayName}`}
                 src={_chroma.swatch}
                 onClick={() => changeChroma(index)}
@@ -45,11 +57,11 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
           ) : null
         )}
       </div>
-      <div className="border flex flex-col border-red-500 gap-2">
+      <div className=" flex flex-col gap-2">
         <div className="flex justify-start">
           <p className="text-bold">Levels</p>
         </div>
-        <div className="flex justify-around text-sm min-h-8">
+        <div className="flex text-sm min-h-8 border-2 items-center justify-between gap-4 ">
           {levels.length > 1 ? (
             levels.map((level, index) => {
               return level.levelItem !== null &&
@@ -70,7 +82,7 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
               ) : null;
             })
           ) : (
-            <p className="text-gray-700"> Empty</p>
+            <p className="text-gray-700"> No levels available</p>
           )}
         </div>
       </div>
