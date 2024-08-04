@@ -1,11 +1,11 @@
 import { getWeaponById } from "@/services/weapons";
-import { useEffect, useState } from "react";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import WeaponSkinCard from "@/components/WeaponSkinCard";
+import { Suspense, lazy, useEffect, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { type Skin } from "@/types/weaponType";
+import Loader from "@/components/Loader";
 
+const WeaponSkinCard = lazy(() => import("@/components/WeaponSkinCard"));
 function WeaponPage() {
-  const { weapon } = useParams();
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [weaponSkins, setWeaponSkins] = useState<Skin[] | null>(null);
@@ -19,16 +19,16 @@ function WeaponPage() {
           return;
         }
         const response = await getWeaponById(weaponUuid);
-        console.log('Respuesta de la fetch',response);
+        console.log("Respuesta de la fetch", response);
         if (response && response.data && response.data.skins) {
           setWeaponSkins(response.data.skins);
         } else {
           console.error("No skins found for weapon.");
-          // navigate("/");
+          navigate("/");
         }
       } catch (error) {
         console.error("Error fetching weapon:", error);
-        // navigate("/");
+        navigate("/");
       }
     };
 
@@ -37,12 +37,13 @@ function WeaponPage() {
 
   return (
     <div className="flex flex-col">
-      <h1>Página del arma: {weapon}</h1>
       <p>UUID: {searchParams.get("idWeapon")}</p>
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <div className="grid sm:grid-cols-2 gap-10 p-4 items-center justify-items-center">
         {weaponSkins && weaponSkins.length > 0 ? (
           weaponSkins.map((skin) => (
-            <WeaponSkinCard skinCardProps={skin} key={skin.uuid} />
+            <Suspense fallback={<Loader />} key={skin.uuid}>
+              <WeaponSkinCard skinCardProps={skin} key={skin.uuid} />
+            </Suspense>
           ))
         ) : (
           <p>No skins available.</p>
