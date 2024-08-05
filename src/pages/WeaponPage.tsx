@@ -26,7 +26,6 @@ function WeaponPage() {
         setWeaponName(itemName);
 
         const response = await getWeaponById(weaponUuid);
-        console.log(response.data.skins)
         if (response && response.data && response.data.skins) {
           setWeaponSkins(response.data.skins);
           createNewRef(response.data.skins);
@@ -44,9 +43,12 @@ function WeaponPage() {
 
   return (
     <section className="flex flex-col items-center p-4">
+      <div className="min-h-12">
       <h1 className="text-4xl m-4 text-red-700 font-bold">
         {weaponName} skins
       </h1>
+      </div>
+      
       <SearchSkin searchSkinByName={searchSkinByName} />
       <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
         {weaponSkins && weaponSkins.length > 0 ? (

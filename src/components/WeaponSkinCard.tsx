@@ -55,7 +55,7 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
                 key={_chroma.uuid}
               >
                 <img
-                  className="w-6 shadow-md shadow-red-400"
+                  className="w-6 h-6 shadow-md shadow-red-400"
                   alt={`chroma ${_chroma.displayName}`}
                   src={_chroma.swatch}
                   onClick={() => changeChroma(index)}
