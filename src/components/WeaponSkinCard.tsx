@@ -22,7 +22,7 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
   };
 
   return (
-    <article className="  bg-slate-950 min-w-[270px] p-2 flex justify-center flex-col gap-6 max-w-[350px] text-center rounded-sm items-center border-2 border-slate-900 hover:border-white transition-all">
+    <article className="  bg-slate-950 min-w-[270px] p-2 flex justify-center flex-col max-w-[350px] text-center rounded-sm items-center border-2 border-slate-900 hover:border-white transition-all gap-2">
       <div className="text-xl">
         <h2 className="font-bold">{displayName}</h2>
       </div>
