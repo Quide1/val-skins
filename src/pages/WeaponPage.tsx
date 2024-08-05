@@ -26,7 +26,7 @@ function WeaponPage() {
         setWeaponName(itemName);
 
         const response = await getWeaponById(weaponUuid);
-
+        console.log(response.data.skins)
         if (response && response.data && response.data.skins) {
           setWeaponSkins(response.data.skins);
           createNewRef(response.data.skins);
