@@ -3,21 +3,25 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { type Skin } from "@/types/weaponType";
 import Loader from "@/components/Loader";
-
+import { weaponsItems } from "@/data/weapons";
 const WeaponSkinCard = lazy(() => import("@/components/WeaponSkinCard"));
 function WeaponPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const [weaponSkins, setWeaponSkins] = useState<Skin[] | null>(null);
-
+  const [weaponName, setWeaponName] = useState<string | null>(null);
   useEffect(() => {
     const fetchData = async () => {
       const weaponUuid = searchParams.get("idWeapon");
-      console.log(weaponUuid);
       try {
         if (weaponUuid == null) {
           return;
         }
+        const weaponItem = weaponsItems.find((i) => i.uuid === weaponUuid);
+
+        const itemName = weaponItem?.displayName ?? "weapon";
+        setWeaponName(itemName);
+
         const response = await getWeaponById(weaponUuid);
         console.log("Respuesta de la fetch", response);
         if (response && response.data && response.data.skins) {
@@ -31,14 +35,15 @@ function WeaponPage() {
         navigate("/");
       }
     };
-
     fetchData();
-  }, [searchParams, navigate]);
+  }, [searchParams, navigate,weaponName]);
 
   return (
-    <div className="flex flex-col">
-      <p>UUID: {searchParams.get("idWeapon")}</p>
-      <div className="grid sm:grid-cols-2 gap-10 p-4 items-center justify-items-center">
+    <section className="flex flex-col items-center p-4">
+      <h1 className="text-4xl m-4 text-red-700 font-bold">
+        {weaponName} skins
+      </h1>
+      <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
         {weaponSkins && weaponSkins.length > 0 ? (
           weaponSkins.map((skin) => (
             <Suspense fallback={<Loader />} key={skin.uuid}>
@@ -49,7 +54,7 @@ function WeaponPage() {
           <p>No skins available.</p>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 

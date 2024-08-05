@@ -28,7 +28,7 @@ function NavBarDesktop() {
   return (
     <>
       {isLargeScreen && (
-          <aside className="bg-slate-800 h-full w-[260px] transform transition-transform duration-300 ease-in-out border-r-2 border-white-600  flex-col p-0">
+          <aside className="bg-slate-900 h-full w-[260px] transform transition-transform duration-300 ease-in-out border-r-2 border-white-600  flex-col p-0">
             <ScrollArea className="h-full w-full p-4">
               <Link to="/" className="w-full">
                 <div className="flex flex-row justify-center text-lg gap-4 items-center h-10">

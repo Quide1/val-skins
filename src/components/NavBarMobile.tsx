@@ -13,12 +13,12 @@ import { Link } from "react-router-dom";
 
 function NavBarMobile() {
   return (
-    <header className="w-full min-h-[5vh] bg-slate-800  flex flex-row justify-end items-center p-2 lg:hidden sticky top-0">
+    <header className="w-full min-h-[5vh] bg-slate-900  flex flex-row justify-end items-center p-2 lg:hidden sticky top-0">
       <Sheet>
         <SheetTrigger className="lg:hidden">
           <HamburgerMenu className="text-red-600" />
         </SheetTrigger>
-        <SheetContent side={"left"} className="bg-slate-800">
+        <SheetContent side={"left"} className="bg-slate-900">
           <ScrollArea className="h-full w-full  ">
             <Link to={"/"} className="w-full">
               <SheetHeader className="flex flex-row justify-center text-lg gap-4  items-center h-10">
