@@ -1,5 +1,7 @@
 import App from '@/App'
 import NotFound from '@/pages/NotFoundPage'
+import PlayerCardsPage from '@/pages/PlayerCardsPage'
+import SpraysPage from '@/pages/SpraysPage'
 import WeaponPage from '@/pages/WeaponPage'
 import {
   createBrowserRouter,
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path:'weapons/:weapon',
         element:<WeaponPage/>
+      },
+      {
+        path:"player-cards",
+        element:<PlayerCardsPage/>
+      },
+      {
+        path:"sprays",
+        element:<SpraysPage/>
       }
     ]
   }
