@@ -9,7 +9,7 @@ const WeaponSkinCard = lazy(() => import("@/components/WeaponSkinCard"));
 function WeaponPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
-  const [isLoading,setIsLoading]= useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   const [weaponName, setWeaponName] = useState<string | null>(null);
   const { setWeaponSkins, weaponSkins, searchSkinByName, createNewRef } =
     useSkinsInfo();
@@ -37,17 +37,18 @@ function WeaponPage() {
       } catch (error) {
         console.error("Error fetching weapon:", error);
         navigate("/");
-      }finally{
-        setIsLoading(false)
-
+      } finally {
+        setIsLoading(false);
       }
     };
     fetchData();
   }, [searchParams, navigate, weaponName]);
   if (isLoading) {
-    return (<div className="w-full flex-col flex items-center justify-center">
-      <Loader />
-      </div>);
+    return (
+      <div className="w-full flex-col flex items-center justify-center">
+        <Loader />
+      </div>
+    );
   }
   return (
     <section className="flex flex-col items-center p-4">
