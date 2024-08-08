@@ -8,8 +8,6 @@ import {
   RouterProvider as Provider
 } from 'react-router-dom'
 
-// Borrar luego
-// import PageTest from '../pages/pageTest'
 
 
 const router = createBrowserRouter([
