@@ -3,46 +3,42 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Loader from "@/components/Loader";
 import { weaponsItems } from "@/data/weapons";
-import SearchSkin from "@/components/searchSkin";
+import SearchSkin from "@/components/SearchSkin";
 import { useSkinsInfo } from "@/hooks/useSkinsInfo";
 const WeaponSkinCard = lazy(() => import("@/components/WeaponSkinCard"));
 function WeaponPage() {
-  const [searchParams] = useSearchParams();
-  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [weaponName, setWeaponName] = useState<string | null>(null);
   const { setWeaponSkins, weaponSkins, searchSkinByName, createNewRef } =
     useSkinsInfo();
+  const fetchData = async () => {
+    try {
+      const weaponUuid = searchParams.get("idWeapon");
+      if (weaponUuid == null) {
+        return;
+      }
+      const weaponItem = weaponsItems.find((i) => i.uuid === weaponUuid);
+      const itemName = weaponItem?.displayName ?? "weapon";
+      setWeaponName(itemName);
+      const response = await getWeaponById(weaponUuid);
+      if (response && response.data && response.data.skins) {
+        setWeaponSkins(response.data.skins);
+        createNewRef(response.data.skins);
+      } else {
+        console.error("No skins found for weapon.");
+      }
+    } catch (error) {
+      console.error("Error fetching weapon:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const weaponUuid = searchParams.get("idWeapon");
-      try {
-        if (weaponUuid == null) {
-          return;
-        }
-        const weaponItem = weaponsItems.find((i) => i.uuid === weaponUuid);
-
-        const itemName = weaponItem?.displayName ?? "weapon";
-        setWeaponName(itemName);
-
-        const response = await getWeaponById(weaponUuid);
-        if (response && response.data && response.data.skins) {
-          setWeaponSkins(response.data.skins);
-          createNewRef(response.data.skins);
-        } else {
-          console.error("No skins found for weapon.");
-          navigate("/");
-        }
-      } catch (error) {
-        console.error("Error fetching weapon:", error);
-        navigate("/");
-      } finally {
-        setIsLoading(false);
-      }
-    };
     fetchData();
-  }, [searchParams, navigate, weaponName]);
+  }, [searchParams]);
+
   if (isLoading) {
     return (
       <div className="w-full flex-col flex items-center justify-center">
@@ -62,7 +58,7 @@ function WeaponPage() {
         {weaponSkins && weaponSkins.length > 0 ? (
           weaponSkins.map((skin) => (
             <Suspense fallback={<Loader />} key={skin.uuid}>
-              <WeaponSkinCard skinCardProps={skin} key={skin.uuid} />
+              <WeaponSkinCard skinCardProps={skin} />
             </Suspense>
           ))
         ) : (
