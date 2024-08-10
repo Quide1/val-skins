@@ -1,13 +1,13 @@
 import { getWeaponById } from "@/services/weapons";
 import { Suspense, lazy, useEffect, useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import {  useSearchParams } from "react-router-dom";
 import Loader from "@/components/Loader";
 import { weaponsItems } from "@/data/weapons";
 import SearchSkin from "@/components/SearchSkin";
 import { useSkinsInfo } from "@/hooks/useSkinsInfo";
 const WeaponSkinCard = lazy(() => import("@/components/WeaponSkinCard"));
 function WeaponPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
   const [weaponName, setWeaponName] = useState<string | null>(null);
   const { setWeaponSkins, weaponSkins, searchSkinByName, createNewRef } =
