@@ -27,7 +27,6 @@ export async function getWeaponById(weaponUuid:string){
             },
         });
         const fetchResponse = await response.json();
-        console.log(fetchResponse,'REspuesta dentro de weapon.ts')
         return fetchResponse;
     } catch (error) {
         console.error(error);
