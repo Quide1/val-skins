@@ -1,6 +1,6 @@
 import { type Datum } from "@/types/playerCardType";
 import { Button } from "./ui/button";
-
+import { DialogTrigger } from "@/components/ui/dialog";
 type PlayerCardProps = {
   props: Datum;
   createChangeHandler: (newInfo: Datum) => void;
@@ -20,7 +20,7 @@ function PlayerCard({ props, createChangeHandler }: PlayerCardProps) {
           className="w-full"
         />
       </div>
-      <a href="#in-game-view">
+      <DialogTrigger asChild>
         <Button
           className="bg-red-700"
           variant={"ghost"}
@@ -28,7 +28,7 @@ function PlayerCard({ props, createChangeHandler }: PlayerCardProps) {
         >
           Select
         </Button>
-      </a>
+      </DialogTrigger>
     </article>
   );
 }
