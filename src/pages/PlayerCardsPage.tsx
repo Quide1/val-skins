@@ -35,12 +35,11 @@ function PlayerCardsPage() {
   }, [cardInfo])
   return (
     <section className="flex flex-col items-center p-4">
-      <h1>Cards</h1>
-      <h3 id="in-game-view">In game view</h3>
+      <h3 id="in-game-view" className="">In game view</h3>
       <section className="flex flex-row flex-wrap items-center justify-center gap-4 border-2 border-red-700 w-full">
-        <IconInGame urlIconImage={cardInfo.displayIcon} />
         <BannerArtInGame urlArtImage={cardInfo.largeArt} />
         <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
+        <IconInGame urlIconImage={cardInfo.displayIcon} />
       </section>
       <div>
         <PlayerOnline />
