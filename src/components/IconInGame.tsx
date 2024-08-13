@@ -4,7 +4,7 @@ function IconInGame({urlIconImage}:{urlIconImage:string}) {
     <div
       className="w-[120px] h-[120px] p-2"
       style={{
-        backgroundImage: "url(/public/borderIconInGame.png)",
+        backgroundImage: "url(/borderIconInGame.png)",
         backgroundSize: "cover", 
         backgroundPosition: "center", 
         backgroundRepeat: "no-repeat" 

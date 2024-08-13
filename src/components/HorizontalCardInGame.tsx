@@ -17,7 +17,7 @@ function HorizontalCardInGame({
           }}
         >
           <img
-            src="public/agent.png"
+            src="/agent.png"
             alt="image of agent"
             className="max-h-[128px] "
           />
