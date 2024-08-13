@@ -24,7 +24,7 @@ function HorizontalCardInGame({
         </div>
       </div>
       <div className="flex flex-row justify-between border-2 p-0.5 text-sm">
-        <p className="font-bold">midudev 43</p>
+        <p className="font-bold text-white">midudev 43</p>
         <p className="text-gray-400">master</p>
         <p className="text-gray-400">Fade</p>
       </div>
