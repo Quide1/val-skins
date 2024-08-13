@@ -1,4 +1,3 @@
-import PlayerOnline from "@/components/PlayerOnline";
 import { lazy, Suspense, useEffect } from "react";
 import Loader from "@/components/Loader";
 import IconInGame from "@/components/IconInGame";
@@ -11,6 +10,12 @@ import { type Card } from "@/types/playerCardType";
 import { useNavigate } from "react-router-dom";
 import SearchCard from "@/components/SearchCard";
 const PlayerCard = lazy(() => import("@/components/PlayerCard"));
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+} from "@/components/ui/dialog"
+
 function PlayerCardsPage() {
   const navigate = useNavigate();
   const { cardInfo, changeCardInfo } = useInGameCardInfo();
@@ -35,25 +40,25 @@ function PlayerCardsPage() {
   }, [cardInfo])
   return (
     <section className="flex flex-col items-center p-4">
-      <h3 id="in-game-view" className="">In game view</h3>
-      <section className="flex flex-row flex-wrap items-center justify-center gap-4 border-2 border-red-700 w-full">
-        <BannerArtInGame urlArtImage={cardInfo.largeArt} />
-        <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
-        <IconInGame urlIconImage={cardInfo.displayIcon} />
-      </section>
-      <div>
-        <PlayerOnline />
-      </div>
-      <div >
+      <Dialog >
+        <DialogContent className="flex flex-col flex-wrap items-center justify-center gap-6 border-2 border-red-700  w-full bg-slate-900">
+          <DialogTitle className="text-2xl text-white">
+            In game view
+          </DialogTitle>
+          <BannerArtInGame urlArtImage={cardInfo.largeArt} />
+          <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
+          <IconInGame urlIconImage={cardInfo.displayIcon} />
+        </DialogContent>
         <SearchCard searchCardByName={searchSkinByName} />
-      </div>
-      <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
-        {allCards?.map((e) => (
-          <Suspense fallback={<Loader />} key={e.uuid}>
-            <PlayerCard props={e} createChangeHandler={changeCardInfo} />
-          </Suspense>
-        ))}
-      </div>
+        <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
+          {allCards?.map((e) => (
+            <Suspense fallback={<Loader />} key={e.uuid} >
+              <PlayerCard props={e} createChangeHandler={changeCardInfo} />
+            </Suspense>
+          ))}
+        </div>
+      </Dialog>
+
     </section>
   );
 }
