@@ -9,7 +9,6 @@ type PlayerCardProps = {
 
 function PlayerCard({ props, createChangeHandler,setIsOpen }: PlayerCardProps) {
   const onClickHandler = () => {
-    console.log()
     setIsOpen((prevState)=>(!prevState))
     createChangeHandler({ ...props });
   };

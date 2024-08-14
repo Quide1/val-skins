@@ -9,7 +9,6 @@ export async function getAllWeapons() {
                 "Content-Type": "application/json",
             },
         });
-        console.log(import.meta.env.VITE_PUBLIC_URL_API)
         const fetchResponse = await response.json();
         return fetchResponse;
     } catch (error) {
