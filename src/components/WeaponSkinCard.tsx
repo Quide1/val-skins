@@ -36,7 +36,7 @@ function WeaponSkinCard({ skinCardProps }: PropsWeaponSkinCard) {
           alt={`skin ${skinCardProps.displayName}`}
           onLoad={handleImageLoad}
           loading="lazy"
-          className="max-h-full border-white-600 w-full"
+          className="max-h-[200px] border-white-600 w-full"
         />
       </div>
       <div className=" flex flex-col gap-2 w-full">
