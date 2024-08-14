@@ -41,8 +41,6 @@ function PlayerCardsPage() {
     <section className="flex flex-col items-center p-4">
       <Dialog open={isOpen}>
         <DialogContent className="flex flex-row flex-wrap items-center justify-center border-2  border-red-700 bg-slate-900 w-full h-full ">
-
-      
           <DialogTitle hidden={true}>
             in game view
           </DialogTitle>

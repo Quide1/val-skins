@@ -27,7 +27,7 @@ function PlayerCard({ props, createChangeHandler,setIsOpen }: PlayerCardProps) {
 
       <Button
         className="bg-red-700"
-        variant={"ghost"}
+        variant={"default"}
         onClick={onClickHandler}
       >
         Select
