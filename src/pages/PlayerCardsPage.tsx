@@ -10,19 +10,16 @@ import { type Card } from "@/types/playerCardType";
 import { useNavigate } from "react-router-dom";
 import SearchCard from "@/components/SearchCard";
 const PlayerCard = lazy(() => import("@/components/PlayerCard"));
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-} from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 // import { DialogTrigger } from "@radix-ui/react-dialog";
 
 function PlayerCardsPage() {
   const navigate = useNavigate();
   const { cardInfo, changeCardInfo } = useInGameCardInfo();
-  const { allCards, setAllCards, createNewRef, searchSkinByName } = usePlayerCards();
-  const [isOpen,setIsOpen] =useState(false)
+  const { allCards, setAllCards, createNewRef, searchSkinByName } =
+    usePlayerCards();
+  const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       const response = (await getAllPlayerCards()) as Card;
@@ -38,34 +35,45 @@ function PlayerCardsPage() {
   }, []);
 
   useEffect(() => {
-    console.log(cardInfo)
-  }, [cardInfo])
+    console.log(cardInfo);
+  }, [cardInfo]);
   return (
     <section className="flex flex-col items-center p-4">
-      <Dialog open={isOpen} >
-        <DialogContent className="flex flex-col flex-wrap items-center justify-center gap-6 border-2 border-red-700  w-full bg-slate-900">
-          <DialogTitle className="text-2xl text-white">
-            In game view
+      <Dialog open={isOpen}>
+        <DialogContent className="flex flex-row flex-wrap items-center justify-center border-2  border-red-700 bg-slate-900 w-full h-full ">
+
+      
+          <DialogTitle hidden={true}>
+            in game view
           </DialogTitle>
-          <BannerArtInGame urlArtImage={cardInfo.largeArt} />
-          <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
-          <IconInGame urlIconImage={cardInfo.displayIcon} />
-        <Button variant={"outline"} className="bg-red-700 text-white" onClick={()=>{
-        setIsOpen(false)
-        }}>
-          Cerrar
-        </Button>
+          <div className="flex flex-col flex-wrap items-center justify-center gap-2">
+            <BannerArtInGame urlArtImage={cardInfo.largeArt} />
+            <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
+            <IconInGame urlIconImage={cardInfo.displayIcon} />
+          </div>
+          <Button
+            variant={"outline"}
+            className="bg-red-700 text-white"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
+            Cerrar
+          </Button>
         </DialogContent>
         <SearchCard searchCardByName={searchSkinByName} />
         <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
           {allCards?.map((e) => (
-            <Suspense fallback={<Loader />} key={e.uuid} >
-              <PlayerCard props={e} createChangeHandler={changeCardInfo} setIsOpen={setIsOpen}/>
+            <Suspense fallback={<Loader />} key={e.uuid}>
+              <PlayerCard
+                props={e}
+                createChangeHandler={changeCardInfo}
+                setIsOpen={setIsOpen}
+              />
             </Suspense>
           ))}
         </div>
       </Dialog>
-
     </section>
   );
 }
