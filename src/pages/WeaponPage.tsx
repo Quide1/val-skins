@@ -47,15 +47,15 @@ function WeaponPage() {
     );
   }
   return (
-    <section className="flex flex-col items-center p-4">
-      <div className="sticky flex-row flex-wrap items-center justify-center min-h-12 border-red-700 p-4">
+    <section className="flex flex-col items-center p-4 border-2 border-blue-700 w-full overflow-hidden">
+      <div className="flex flex-row flex-wrap items-center justify-center min-h-12 border-red-700 p-4">
         <h1 className="text-4xl m-4 text-red-700 font-bold">
           {weaponName} skins
         </h1>
       </div>
       <SearchSkin searchSkinByName={searchSkinByName} />
 
-      <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
+      <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900">
         {weaponSkins && weaponSkins.length > 0 ? (
           weaponSkins.map((skin) => (
             <Suspense fallback={<Loader />} key={skin.uuid}>
