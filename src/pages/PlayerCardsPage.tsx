@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Loader from "@/components/Loader";
 import IconInGame from "@/components/IconInGame";
 import BannerArtInGame from "@/components/BannerArtInGame";
@@ -15,12 +15,14 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button";
+// import { DialogTrigger } from "@radix-ui/react-dialog";
 
 function PlayerCardsPage() {
   const navigate = useNavigate();
   const { cardInfo, changeCardInfo } = useInGameCardInfo();
   const { allCards, setAllCards, createNewRef, searchSkinByName } = usePlayerCards();
-
+  const [isOpen,setIsOpen] =useState(false)
   useEffect(() => {
     const fetchData = async () => {
       const response = (await getAllPlayerCards()) as Card;
@@ -40,7 +42,7 @@ function PlayerCardsPage() {
   }, [cardInfo])
   return (
     <section className="flex flex-col items-center p-4">
-      <Dialog >
+      <Dialog open={isOpen} >
         <DialogContent className="flex flex-col flex-wrap items-center justify-center gap-6 border-2 border-red-700  w-full bg-slate-900">
           <DialogTitle className="text-2xl text-white">
             In game view
@@ -48,12 +50,17 @@ function PlayerCardsPage() {
           <BannerArtInGame urlArtImage={cardInfo.largeArt} />
           <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
           <IconInGame urlIconImage={cardInfo.displayIcon} />
+        <Button variant={"outline"} className="bg-red-700 text-white" onClick={()=>{
+        setIsOpen(false)
+        }}>
+          Cerrar
+        </Button>
         </DialogContent>
         <SearchCard searchCardByName={searchSkinByName} />
         <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
           {allCards?.map((e) => (
             <Suspense fallback={<Loader />} key={e.uuid} >
-              <PlayerCard props={e} createChangeHandler={changeCardInfo} />
+              <PlayerCard props={e} createChangeHandler={changeCardInfo} setIsOpen={setIsOpen}/>
             </Suspense>
           ))}
         </div>

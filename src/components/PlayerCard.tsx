@@ -1,13 +1,17 @@
 import { type Datum } from "@/types/playerCardType";
 import { Button } from "./ui/button";
 import { DialogTrigger } from "@/components/ui/dialog";
+
 type PlayerCardProps = {
   props: Datum;
   createChangeHandler: (newInfo: Datum) => void;
+  setIsOpen:React.Dispatch<React.SetStateAction<boolean>>
 };
 
-function PlayerCard({ props, createChangeHandler }: PlayerCardProps) {
+function PlayerCard({ props, createChangeHandler,setIsOpen }: PlayerCardProps) {
   const onClickHandler = () => {
+    console.log()
+    setIsOpen((prevState)=>(!prevState))
     createChangeHandler({ ...props });
   };
   return (
@@ -18,17 +22,18 @@ function PlayerCard({ props, createChangeHandler }: PlayerCardProps) {
           src={`${props.largeArt}`}
           alt={`banner of ${props.displayName}`}
           className="w-full"
+          loading="eager"
         />
       </div>
-      <DialogTrigger asChild>
-        <Button
-          className="bg-red-700"
-          variant={"ghost"}
-          onClick={onClickHandler}
-        >
-          Select
-        </Button>
-      </DialogTrigger>
+      
+      <Button
+        className="bg-red-700"
+        variant={"ghost"}
+        onClick={onClickHandler}
+      >
+        Select
+      </Button>
+
     </article>
   );
 }
