@@ -12,7 +12,6 @@ import SearchCard from "@/components/SearchCard";
 const PlayerCard = lazy(() => import("@/components/PlayerCard"));
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-// import { DialogTrigger } from "@radix-ui/react-dialog";
 
 function PlayerCardsPage() {
   const navigate = useNavigate();
@@ -40,11 +39,11 @@ function PlayerCardsPage() {
   return (
     <section className="flex flex-col items-center p-4">
       <Dialog open={isOpen}>
-        <DialogContent className="flex flex-row flex-wrap items-center justify-center border-2  border-red-700 bg-slate-900 w-full h-full ">
+        <DialogContent className="flex flex-row flex-wrap items-end justify-center border-2  border-red-700 bg-slate-900 w-full h-full gap-0">
           <DialogTitle hidden={true}>
             in game view
           </DialogTitle>
-          <div className="flex flex-col flex-wrap items-center justify-center gap-2">
+          <div className="flex flex-col flex-wrap items-center justify-center gap-1">
             <BannerArtInGame urlArtImage={cardInfo.largeArt} />
             <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
             <IconInGame urlIconImage={cardInfo.displayIcon} />
@@ -60,7 +59,7 @@ function PlayerCardsPage() {
           </Button>
         </DialogContent>
         <SearchCard searchCardByName={searchSkinByName} />
-        <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900 ">
+        <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900  ">
           {allCards?.map((e) => (
             <Suspense fallback={<Loader />} key={e.uuid}>
               <PlayerCard
