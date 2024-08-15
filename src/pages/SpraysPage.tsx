@@ -30,6 +30,7 @@ function SpraysPage() {
 
   return (
     <section className="flex flex-row flex-wrap items-center justify-center p-4 gap-20">
+      <h1 className="text-red-700 text-4xl font-bold"> Sprays </h1>
       <SearchSpray searchSprayByName={searchSkinByName} />
       {sprays && sprays.length > 0 ? (
         sprays?.map((e) => {
