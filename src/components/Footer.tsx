@@ -1,5 +1,4 @@
 import GitHubIcon from '@/icons/GitHubIcon'
-import LinkedInIcon from '@/icons/LinkedinIcon'
 
 function Footer() {
     return (
