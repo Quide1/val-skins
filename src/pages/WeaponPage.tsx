@@ -52,10 +52,7 @@ function WeaponPage() {
       <h1 className="text-4xl text-red-700 font-bold">
         {weaponName} skins
       </h1>
-
       <SearchSkin searchSkinByName={searchSkinByName} />
-
-
       <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900">
         {weaponSkins && weaponSkins.length > 0 ? (
           weaponSkins.map((skin) => (
