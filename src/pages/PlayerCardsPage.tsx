@@ -12,7 +12,7 @@ import SearchCard from "@/components/SearchCard";
 const PlayerCard = lazy(() => import("@/components/PlayerCard"));
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-
+import { ScrollArea } from "@/components/ui/scroll-area"
 function PlayerCardsPage() {
   const navigate = useNavigate();
   const { cardInfo, changeCardInfo } = useInGameCardInfo();
@@ -33,28 +33,27 @@ function PlayerCardsPage() {
     fetchData();
   }, []);
 
-
   return (
     <section className="flex flex-col items-center p-4">
       <Dialog open={isOpen}>
-        <DialogContent className="flex flex-row flex-wrap items-end justify-center border-2  border-red-700 bg-slate-900 w-full h-full ">
-          <DialogTitle hidden={true}>
-            in game view
-          </DialogTitle>
-          <div className="flex flex-col flex-wrap items-center justify-center gap-1">
-            <BannerArtInGame urlArtImage={cardInfo.largeArt} />
-            <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
-            <IconInGame urlIconImage={cardInfo.displayIcon} />
-          </div>
-          <Button
-            variant={"outline"}
-            className="bg-red-700 text-white fixed top-2 "
-            onClick={() => {
-              setIsOpen(false);
-            }}
-          >
-            Cerrar
-          </Button>
+        <DialogContent className="bg-slate-9001 ">
+          <ScrollArea className="h-full w-full ">
+            <div className="flex flex-col items-center justify-normal w-full border-2 border-red-700 h-full ">
+              <DialogTitle hidden={true}>in game view</DialogTitle>
+              <BannerArtInGame urlArtImage={cardInfo.largeArt} />
+              <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
+              <IconInGame urlIconImage={cardInfo.displayIcon} />
+              <Button
+                variant={"outline"}
+                className="bg-red-700 text-white"
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              >
+                Close
+              </Button>
+            </div>
+          </ScrollArea>
         </DialogContent>
         <SearchCard searchCardByName={searchSkinByName} />
         <div className="flex flex-row flex-wrap gap-10 p-4 items-center justify-around bg-slate-900  ">
