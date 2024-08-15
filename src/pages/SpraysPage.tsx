@@ -29,7 +29,7 @@ function SpraysPage() {
   }
 
   return (
-    <section className="flex flex-row flex-wrap items-center justify-center p-4 gap-4 border-2">
+    <section className="flex flex-row flex-wrap items-center justify-center p-4 gap-20">
       <SearchSpray searchSprayByName={searchSkinByName} />
       {sprays && sprays.length > 0 ? (
         sprays?.map((e) => {
