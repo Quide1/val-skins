@@ -1,4 +1,5 @@
 import App from '@/App'
+import HomePage from '@/pages/HomePage'
 import NotFound from '@/pages/NotFoundPage'
 import PlayerCardsPage from '@/pages/PlayerCardsPage'
 import SpraysPage from '@/pages/SpraysPage'
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>Inicio</h1>
+        element: <HomePage/>
       },
       {
         path:'weapons/:weapon',
