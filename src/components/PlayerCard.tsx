@@ -14,7 +14,9 @@ function PlayerCard({ props, createChangeHandler,setIsOpen }: PlayerCardProps) {
   };
   return (
     <article className="bg-slate-950 flex flex-col items-center justify-between gap-2 p-4 rounded-lg border-2 border-slate-950 hover:border-red-700 transition-all w-[236px] h-[620px] ">
+      <div className="h-14 text-center ">
       <h3 className=" font-bold text-xl">{props.displayName}</h3>
+      </div>
       <div className="max-w-[200px]">
         <img
           src={`${props.largeArt}`}
