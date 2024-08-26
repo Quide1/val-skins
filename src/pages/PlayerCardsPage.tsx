@@ -36,9 +36,9 @@ function PlayerCardsPage() {
   return (
     <section className="flex flex-col items-center p-4">
       <Dialog open={isOpen}>
-        <DialogContent className="bg-slate-9001 ">
+        <DialogContent className="bg-slate-900">
           <ScrollArea className="h-full w-full ">
-            <div className="flex flex-col items-center justify-normal w-full border-2 border-red-700 h-full ">
+            <div className="flex flex-col items-center justify-normal w-full  h-full ">
               <DialogTitle hidden={true}>in game view</DialogTitle>
               <BannerArtInGame urlArtImage={cardInfo.largeArt} />
               <HorizontalCardInGame urlHorizontalArt={cardInfo.wideArt} />
