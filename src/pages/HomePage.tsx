@@ -21,8 +21,16 @@ function HomePage() {
                 }
                 title="Catch the live matches for exclusive Drops!"
             ></BlogArticle>
-
-
+             <BlogArticle
+                urlImage="https://gdm-assets.b-cdn.net/images/ncavvykf/siege/8e44fc817cfc46c1d578b94d7704833c0a5564b1-1920x1080.jpg?auto=format"
+                text="Valorant's Nocturnum Bundle will be released on August 29. We expect the Nocturnum Bundle to be on the game's store for two weeks."
+                day={"ago 29 2024"}
+                urlNotice={
+                    "https://siege.gg/news/valorant-nocturnum-bundle-release-date-skins-price-and-more"
+                }
+                title="Nocturnum Bundle Release Date"
+            ></BlogArticle>
+                    
         </section>
     );
 }
