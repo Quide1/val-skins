@@ -2,6 +2,15 @@ import BlogArticle from "@/components/BlogArticle";
 function HomePage() {
     return (
         <section className="flex flex-col justify-center items-center p-4 gap-10 flex-wrap">
+                  <BlogArticle
+                urlImage="https://gdm-assets.b-cdn.net/images/ncavvykf/siege/8e44fc817cfc46c1d578b94d7704833c0a5564b1-1920x1080.jpg?auto=format"
+                text="Valorant's Nocturnum Bundle will be released on August 29. We expect the Nocturnum Bundle to be on the game's store for two weeks."
+                day={"ago 29 2024"}
+                urlNotice={
+                    "https://siege.gg/news/valorant-nocturnum-bundle-release-date-skins-price-and-more"
+                }
+                title="Nocturnum Bundle Release Date"
+            ></BlogArticle>
             <BlogArticle
                 urlImage="https://pbs.twimg.com/media/GTV7Q8WX0AERYgZ?format=jpg&name=large"
                 text="The Valorant Champions 2024 is just around the corner, meaning a new bundle for the annual competition is dropping soon into the game."
@@ -21,15 +30,7 @@ function HomePage() {
                 }
                 title="Catch the live matches for exclusive Drops!"
             ></BlogArticle>
-             <BlogArticle
-                urlImage="https://gdm-assets.b-cdn.net/images/ncavvykf/siege/8e44fc817cfc46c1d578b94d7704833c0a5564b1-1920x1080.jpg?auto=format"
-                text="Valorant's Nocturnum Bundle will be released on August 29. We expect the Nocturnum Bundle to be on the game's store for two weeks."
-                day={"ago 29 2024"}
-                urlNotice={
-                    "https://siege.gg/news/valorant-nocturnum-bundle-release-date-skins-price-and-more"
-                }
-                title="Nocturnum Bundle Release Date"
-            ></BlogArticle>
+       
                     
         </section>
     );
