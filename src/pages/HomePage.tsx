@@ -19,7 +19,7 @@ function HomePage() {
                     "https://valorantesports.com/en-US/news/watch-and-earn-champions-seoul"
                 }
                 title="Catch the live matches for exclusive Drops!"
-            ></BlogArticle>
+            ></BlogArticle> 
             <BlogArticle
                 urlImage="https://pbs.twimg.com/media/GTV7Q8WX0AERYgZ?format=jpg&name=large"
                 text="The Valorant Champions 2024 is just around the corner, meaning a new bundle for the annual competition is dropping soon into the game."
