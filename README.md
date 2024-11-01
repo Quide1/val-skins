@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# VaSkins
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vaskins es una página web interactiva que permite a los usuarios explorar una amplia variedad de skins de armas, cartas y sprays del juego. Los usuarios pueden visualizar animaciones y chromas de cada skin, así como simular cómo se verían las cartas seleccionadas dentro del juego. La aplicación utiliza la API oficial de Riot Games para obtener datos en tiempo real, proporcionando así una experiencia dinámica y emocionante.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Exploración de skins**: Navega a través de diversas skins de armas, cartas y sprays, visualizando detalles y animaciones.
+- **Simulación en el juego**: Selecciona cartas y simula su apariencia dentro del juego, ofreciendo una vista previa interactiva.
+- **Interfaz dinámica**: Diseñada para ser atractiva y fácil de usar, garantizando que los usuarios puedan encontrar rápidamente lo que buscan.
+- **Datos en tiempo real**: Integración con la API oficial de Riot Games para mantener la información actualizada y precisa.
 
-## Expanding the ESLint configuration
+## Tecnologías Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Biblioteca para construir la interfaz de usuario.
+- **Tailwind CSS**: Framework para el diseño responsivo y atractivo.
+- **API de Riot Games**: Para obtener datos sobre skins, cartas y sprays.
+- **NextJs FrameWork**:Framework de React + Typescript para el desarrollo dinámico
+## Instalación
 
-- Configure the top-level `parserOptions` property like this:
+```bash
+# Clona el repositorio
+git clone hhttps://github.com/Quide1/val-skins
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+# Instala las dependencias
+cd val-skins
+npm install
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Ejecuta la aplicación en modo desarrollo
+npm run dev
