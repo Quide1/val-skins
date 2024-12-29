@@ -1,29 +1,30 @@
 # VaSkins
 
-Vaskins es una página web interactiva que permite a los usuarios explorar una amplia variedad de skins de armas, cartas y sprays del juego. Los usuarios pueden visualizar animaciones y chromas de cada skin, así como simular cómo se verían las cartas seleccionadas dentro del juego. La aplicación utiliza la API oficial de Riot Games para obtener datos en tiempo real, proporcionando así una experiencia dinámica y emocionante.
+VaSkins is an interactive website that allows users to explore a wide variety of weapon skins, cards, and sprays from the game. Users can view animations and chromas for each skin, as well as simulate how selected cards would appear in the game. The application uses Riot Games' official API to fetch real-time data, providing a dynamic and exciting experience.
 
-## Características
+## Features
 
-- **Exploración de skins**: Navega a través de diversas skins de armas, cartas y sprays, visualizando detalles y animaciones.
-- **Simulación en el juego**: Selecciona cartas y simula su apariencia dentro del juego, ofreciendo una vista previa interactiva.
-- **Interfaz dinámica**: Diseñada para ser atractiva y fácil de usar, garantizando que los usuarios puedan encontrar rápidamente lo que buscan.
-- **Datos en tiempo real**: Integración con la API oficial de Riot Games para mantener la información actualizada y precisa.
+- **Skin Exploration**: Browse through various weapon skins, cards, and sprays, viewing details and animations.
+- **In-Game Simulation**: Select cards and simulate their appearance in the game, offering an interactive preview.
+- **Dynamic Interface**: Designed to be visually appealing and user-friendly, ensuring users can quickly find what they’re looking for.
+- **Real-Time Data**: Integration with Riot Games' official API to keep information updated and accurate.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **React**: Biblioteca para construir la interfaz de usuario.
-- **Tailwind CSS**: Framework para el diseño responsivo y atractivo.
-- **API de Riot Games**: Para obtener datos sobre skins, cartas y sprays.
-- **NextJs FrameWork**:Framework de React + Typescript para el desarrollo dinámico
-## Instalación
+- **React**: Library for building the user interface.
+- **Tailwind CSS**: Framework for responsive and attractive design.
+- **Riot Games API**: For fetching data about skins, cards, and sprays.
+- **Next.js Framework**: React + TypeScript framework for dynamic development.
+
+## Installation
 
 ```bash
-# Clona el repositorio
-git clone hhttps://github.com/Quide1/val-skins
+# Clone the repository
+git clone https://github.com/Quide1/val-skins
 
-# Instala las dependencias
+# Install dependencies
 cd val-skins
 npm install
 
-# Ejecuta la aplicación en modo desarrollo
+# Run the application in development mode
 npm run dev
